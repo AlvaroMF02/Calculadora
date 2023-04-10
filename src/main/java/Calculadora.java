@@ -1,3 +1,4 @@
+
 /**
  *
  * @author alvaro
@@ -7,7 +8,7 @@ public class Calculadora extends javax.swing.JFrame {
     // NUMEROS CON LOS QUE HACERT LOS CALCULOS
     int num1, num2;
     String signo;
-    
+
     /**
      * Creates new form Calculadora
      */
@@ -154,6 +155,11 @@ public class Calculadora extends javax.swing.JFrame {
         jButton10.setBackground(new java.awt.Color(102, 102, 255));
         jButton10.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jButton10.setText("=");
+        jButton10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton10ActionPerformed(evt);
+            }
+        });
 
         jButton11.setBackground(new java.awt.Color(153, 153, 153));
         jButton11.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -177,10 +183,20 @@ public class Calculadora extends javax.swing.JFrame {
         jButton13.setBackground(new java.awt.Color(153, 153, 255));
         jButton13.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jButton13.setText("-");
+        jButton13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton13ActionPerformed(evt);
+            }
+        });
 
         jButton14.setBackground(new java.awt.Color(153, 153, 255));
         jButton14.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jButton14.setText("+");
+        jButton14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton14ActionPerformed(evt);
+            }
+        });
 
         jButton15.setBackground(new java.awt.Color(153, 153, 255));
         jButton15.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
@@ -194,6 +210,11 @@ public class Calculadora extends javax.swing.JFrame {
         jButton16.setBackground(new java.awt.Color(153, 153, 255));
         jButton16.setFont(new java.awt.Font("Liberation Sans", 1, 18)); // NOI18N
         jButton16.setText("x");
+        jButton16.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton16ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -355,13 +376,66 @@ public class Calculadora extends javax.swing.JFrame {
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
         num1 = Integer.parseInt(Pantalla.getText());
-        
-        signo = " / ";
-        
+
+        signo = "/";
+
         Pantalla.setText("");
     }//GEN-LAST:event_jButton15ActionPerformed
 
-    
+    // BOTON PARA MULTIPLICAR
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        num1 = Integer.parseInt(Pantalla.getText());
+
+        signo = "*";
+
+        Pantalla.setText("");
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    // BOTON PARA RESTAR
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        num1 = Integer.parseInt(Pantalla.getText());
+
+        signo = "-";
+
+        Pantalla.setText("");
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    // BOTON PARA SUMAR
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        num1 = Integer.parseInt(Pantalla.getText());
+
+        signo = "+";
+
+        Pantalla.setText("");
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    // BOTON IGUAL
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        num2 = Integer.parseInt(Pantalla.getText());
+
+        switch (signo) {
+            case "+":
+                Pantalla.setText(Integer.toString(num1 + num2));
+                break;
+            case "-":
+
+                break;
+            case "*":
+
+                break;
+            case "/":
+
+                break;
+
+            default:
+                throw new AssertionError();
+        }
+    }//GEN-LAST:event_jButton10ActionPerformed
+
     /**
      * @param args the command line arguments
      */
