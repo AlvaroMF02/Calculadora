@@ -5,7 +5,7 @@
  */
 public class Calculadora extends javax.swing.JFrame {
 
-    // NUMEROS CON LOS QUE HACERT LOS CALCULOS
+    // NUMEROS CON LOS QUE HACER LOS CALCULOS
     int num1, num2;
     String signo;
 
@@ -412,7 +412,7 @@ public class Calculadora extends javax.swing.JFrame {
         Pantalla.setText("");
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    // BOTON IGUAL
+    // BOTON IGUAL CON TODOS LOS CALCULOS
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
         num2 = Integer.parseInt(Pantalla.getText());
@@ -421,18 +421,18 @@ public class Calculadora extends javax.swing.JFrame {
             case "+":
                 Pantalla.setText(Integer.toString(num1 + num2));
                 break;
+                
             case "-":
-
+                Pantalla.setText(Integer.toString(num1 - num2));
                 break;
+                
             case "*":
-
+                Pantalla.setText(Integer.toString(num1 * num2));
                 break;
+                
             case "/":
-
+                Pantalla.setText(Integer.toString(num1 / num2));
                 break;
-
-            default:
-                throw new AssertionError();
         }
     }//GEN-LAST:event_jButton10ActionPerformed
 
